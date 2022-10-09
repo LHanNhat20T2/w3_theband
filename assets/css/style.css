@@ -1,0 +1,105 @@
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header{
+    height: 46px;
+    background-color: #000;
+}
+
+#nav {
+    display: inline-block;
+}
+
+.nav,.subnav{
+    list-style-type: none;
+
+}
+#nav > li{
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    padding: 0 24px;
+    line-height: 46px;
+ 
+    display: block;
+}
+
+#nav li:hover .subnav  {
+    display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+    top: 100%;
+    left: 0px;
+
+}
+
+#nav .subnav a{
+    color: #000;
+    min-width: 160px;
+    line-height: 38px;
+    padding: 0 16px;
+}
+
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+
+#header .search-btn{
+    float: right;
+    padding: 0 21px;
+
+}
+
+#header .search-btn:hover{
+    cursor: pointer;
+    background-color: #f44336;
+}   
+
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+
+}
+
+
+#slider {
+}
+
+#content {
+
+}
+
+#footer {
+
+}
