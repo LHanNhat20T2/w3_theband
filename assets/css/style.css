@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html{
@@ -10,10 +11,15 @@ html{
 }
 
 #header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 46px;
     background-color: #000;
-}
+    z-index: 1;
 
+}
 #nav {
     display: inline-block;
 }
@@ -93,13 +99,89 @@ html{
 }
 
 
-#slider {
+#slider {   
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('/assets/img/slider/slider1.jpg') top center /cover no-repeat;
+    
+
 }
+
+#slider .text-content {
+    position: absolute;
+    color: #fff;
+    bottom: 47px;
+    text-align: center;  
+    /* width: 100%;  */
+
+    /* left: 0;
+    right: 0; */
+    left: 50%;
+    transform: translateX(-50%);
+    /* font-weigh chạy từ 100 -700 */
+     
+
+}
+
+#slider .text-heading {
+    font-weight: 300;
+    font-size: 24px;
+}
+
+#slider .text-description {
+    font-weight: 700;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
 
 #content {
 
 }
 
+#content .content-section{
+    width: 800px;
+    padding: 64px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 4px;
+
+}
+
+#content .section-sub-heading {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.6;
+
+}
+
+#content .about-text {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: justify;
+   /* 1.6 với tiếng việt */
+    line-height: 1.4;
+}
+
+#content .member-list {
+}
+
+#content .member-item {
+    float: left;
+}
+
+
+
 #footer {
 
 }
+
