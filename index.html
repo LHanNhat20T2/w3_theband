@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
 </head>
-<!--     -->
+<!--   https://www.w3schools.com/w3css/tryw3css_templates_band.htm  -->
 <body>
     <div id="main">
         <div id="header">
@@ -89,7 +89,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-des">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-tickets">Buy Tickets</a>
+                                <button class="place-buy-tickets js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-des">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-tickets">Buy Tickets</a>
+                                <button class="place-buy-tickets js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-des">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="place-buy-tickets">Buy Tickets</a>
+                                <button class="place-buy-tickets js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -124,9 +124,69 @@
             </div>
         </div>  
         <div id="footer">
-
         </div>
-
     </div>   
-</body>
+
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-bag"></i>
+                Tickets
+            </header>
+
+            <div class="modal-body">
+                <label for="tickets-quantity" class="modal-lable">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input id="tickets-quantity" type="text" class="modal-input" placeholder="How many?">
+
+                <label for="ticket-email" class="modal-lable">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input id="ticket-email" type="email" class="modal-input" placeholder="Enter email...">
+
+                <button id="buy-tickets">
+                        <i class="ti-check"></i>
+                        Pay
+                </button>
+            </div>
+
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="">help?</a></p>
+            </footer>
+        </div>  
+    </div>
+
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
+        const modalClose = document.querySelector('.js-modal-close')
+
+        function showBuyTickets() {
+            modal.classList.add('open')
+        }
+
+        function hideBuyTickets() {
+            modal.classList.remove('open')
+        }
+
+        for (const buyBtn of buyBtns){
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
+
+        modalClose.addEventListener('click',hideBuyTickets)
+        modal.addEventListener('click',hideBuyTickets)
+
+        modalContainer.addEventListener('click', function (event) {
+                event.stopPropagation()
+        })
+    </script>
+</body> 
 </html>
